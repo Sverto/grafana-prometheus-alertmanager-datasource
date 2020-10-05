@@ -265,7 +265,7 @@ export function dsRegularEscape(value) {
 
 export function dsSpecialRegexEscape(value) {
   if (typeof value === 'string') {
-    return dsRegularEscape(value.replace(/\\/g, '\\\\\\\\').replace(/[$^*{}\[\]+?.()]/g, '\\\\$&'));
+    return dsRegularEscape(value.replace(/\\/g, '\\\\\\\\').replace(/[$^*{}\[\]+?()]/g, '\\\\$&'));
   }
   return value;
 }
