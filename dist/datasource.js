@@ -11,18 +11,9 @@ System.register(['lodash'], function (_export, _context) {
     }
   }
 
-  function dsRegularEscape(value) {
-    if (typeof value === 'string') {
-      return value.replace(/'/g, "\\\\'");
-    }
-    return value;
-  }
-
-  _export('dsRegularEscape', dsRegularEscape);
-
   function dsSpecialRegexEscape(value) {
     if (typeof value === 'string') {
-      return dsRegularEscape(value.replace(/\\/g, '\\\\\\\\').replace(/[$^*{}\[\]+?.()]/g, '\\\\$&'));
+      return value.replace(/[$^*{}\[\]+?()\.\\]/g, '\\$&');
     }
     return value;
   }
